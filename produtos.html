@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos - IdealTech Computadores</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" href="./assets/img/favicon.ico">
+    <style>
+        .bg-dark {
+            --bs-bg-opacity: 1;
+            background-color: rgb(33 37 41 / 24%) !important;
+        }
+        .category-card {
+            transition: transform 0.3s ease;
+            height: 100%;
+        }
+        .category-card:hover {
+            transform: translateY(-5px);
+        }
+        .category-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #0d6efd;
+        }
+        .contact-btn {
+            transition: all 0.3s ease;
+        }
+        .contact-btn:hover {
+            background-color: #0d6efd;
+            color: white;
+        }
+        .category-img {
+            height: 150px;
+            object-fit: contain;
+            padding: 15px;
+        }
+        .nav-underline {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background-color: #0d6efd;
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        .nav-link:hover .nav-underline,
+        .nav-link.active .nav-underline {
+            transform: scaleX(1);
+        }
+
+            /* Estilos para o footer */
+        .bg-dark {
+        --bs-bg-opacity: 1;
+        background-color: rgb(33 37 41 / 24%) !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar bg-light py-2 d-none d-lg-block border-bottom">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div class="d-flex align-items-center">
+                        <i class="fas fa-phone-alt me-2 text-muted"></i>
+                        <span class="me-3 text-muted">(54) 99187-7218</span>
+                        <i class="fas fa-envelope me-2 text-muted"></i>
+                        <span class="text-muted">idealtech@idealtechcomputadores.com.br</span>
+                    </div>
+                </div>
+                <div class="col-md-6 text-end">
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/profile.php?id=61563216931237" class="text-muted me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/idealtechassistencia/?hl=pt-br" class="text-muted me-3"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/company/idealtech-solu%C3%A7%C3%B5es-em-inform%C3%A1tica" class="text-muted me-3"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modern Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="./assets/img/logo.png" alt="IdealTech" height="40">
+            </a>
+            
+            <!-- Mobile Toggle -->
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item">
+                        <a class="nav-link position-relative px-3 active" href="index.html">
+                            <i class="fas fa-home d-lg-none me-2"></i> Início
+                            <span class="nav-underline"></span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link position-relative px-3" href="empresa.html">
+                            <i class="fas fa-building d-lg-none me-2"></i> Empresa
+                            <span class="nav-underline"></span>
+                        </a>
+                    </li>
+                    
+                    <!-- Dropdown Produtos -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle position-relative px-3" href="#" id="produtosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-laptop-code d-lg-none me-2"></i> Produtos
+                            <span class="nav-underline"></span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end border-0 shadow-lg" aria-labelledby="produtosDropdown">
+                            <li>
+                                <h6 class="dropdown-header text-uppercase text-secondary fw-bold">Hardware</h6>
+                            </li>
+                            <li>
+                                <a class="dropdown-item py-2" href="produtos.html?categoria=notebooks">
+                                    <i class="fas fa-laptop me-2 text-primary"></i>Notebooks
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item py-2" href="produtos.html?categoria=computadores">
+                                    <i class="fas fa-desktop me-2 text-primary"></i>Computadores
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item py-2" href="produtos.html?categoria=impressoras">
+                                    <i class="fas fa-print me-2 text-primary"></i>Impressoras
+                                </a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider my-1">
+                            </li>
+                            <li>
+                                <h6 class="dropdown-header text-uppercase text-secondary fw-bold">Acessórios</h6>
+                            </li>
+                            <li>
+                                <a class="dropdown-item py-2" href="produtos.html?categoria=monitores">
+                                    <i class="fas fa-tv me-2 text-primary"></i>Monitores
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item py-2" href="produtos.html?categoria=perifericos">
+                                    <i class="fas fa-keyboard me-2 text-primary"></i>Periféricos
+                                </a>
+                            </li>
+                        </ul>
+
+                    </li>
+                    
+                    <!-- Dropdown Serviços -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle position-relative px-3" href="#" id="servicosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-concierge-bell d-lg-none me-2"></i> Serviços
+                            <span class="nav-underline"></span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end border-0 shadow-lg" aria-labelledby="servicosDropdown">
+                            <li><a class="dropdown-item py-2" href="servicos.html#manutencao"><i class="fas fa-tools me-2 text-primary"></i>Manutenção</a></li>
+                            <li><a class="dropdown-item py-2" href="servicos.html#suporte"><i class="fas fa-headset me-2 text-primary"></i>Suporte Técnico</a></li>
+                            <li><a class="dropdown-item py-2" href="servicos.html#consultoria"><i class="fas fa-user-tie me-2 text-primary"></i>Consultoria</a></li>
+                            <li><hr class="dropdown-divider my-1"></li>
+                            <li><a class="dropdown-item py-2" href="backup.html"><i class="fas fa-cloud me-2 text-primary"></i>Backup em Nuvem</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link position-relative px-3" href="contato.html">
+                            <i class="fas fa-envelope d-lg-none me-2"></i> Contato
+                            <span class="nav-underline"></span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h1 class="display-5 fw-bold">Nossas Linhas de Produtos</h1>
+                    <p class="lead">Soluções completas em tecnologia para sua empresa ou uso pessoal</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <div class="container my-5">
+        <div class="row">
+            <!-- Sidebar Simplificada -->
+            <aside class="col-lg-3 mb-5 mb-lg-0">
+                <div class="card border-0 shadow-sm sticky-top" style="top: 20px;">
+                    <div class="card-header bg-white border-bottom">
+                        <h5 class="mb-0 fw-bold">Categorias</h5>
+                    </div>
+                    <div class="card-body p-0">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item border-0 d-flex align-items-center">
+                                <i class="fas fa-laptop text-primary me-2"></i>
+                                <a href="#notebooks" class="text-decoration-none text-dark">Notebooks</a>
+                            </li>
+                            <li class="list-group-item border-0 d-flex align-items-center">
+                                <i class="fas fa-desktop text-primary me-2"></i>
+                                <a href="#computadores" class="text-decoration-none text-dark">Computadores</a>
+                            </li>
+                            <li class="list-group-item border-0 d-flex align-items-center">
+                                <i class="fas fa-print text-primary me-2"></i>
+                                <a href="#impressoras" class="text-decoration-none text-dark">Impressoras</a>
+                            </li>
+                            <li class="list-group-item border-0 d-flex align-items-center">
+                                <i class="fas fa-tv text-primary me-2"></i>
+                                <a href="#monitores" class="text-decoration-none text-dark">Monitores</a>
+                            </li>
+                            <li class="list-group-item border-0 d-flex align-items-center">
+                                <i class="fas fa-keyboard text-primary me-2"></i>
+                                <a href="#perifericos" class="text-decoration-none text-dark">Periféricos</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card-footer bg-light border-top text-center">
+                        <button class="btn btn-primary w-100" onclick="redirectToContact('Informações sobre Produtos')">
+                            <i class="fas fa-envelope me-2"></i> Solicitar Informações
+                        </button>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Conteúdo Principal Atualizado -->
+            <main class="col-lg-9">
+                <!-- Seção de Notebooks -->
+                <section id="notebooks" class="mb-5">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body">
+                            <div class="row align-items-center">
+                                <div class="col-md-3 text-center">
+                                    <img src="/assets/img/notebook.avif" alt="Notebooks" class="category-img">
+                                </div>
+                                <div class="col-md-9">
+                                    <h2 class="h4 fw-bold">Notebooks</h2>
+                                    <p class="text-muted">Oferecemos uma linha completa de notebooks para todas as necessidades, desde modelos básicos para tarefas do dia a dia até máquinas de alto desempenho para profissionais criativos e gamers. Trabalhamos com as principais marcas do mercado, garantindo qualidade e desempenho.</p>
+                                    <div class="d-flex flex-wrap gap-2">
+                                        <span class="badge bg-light text-dark">Dell</span>
+                                        <span class="badge bg-light text-dark">HP</span>
+                                        <span class="badge bg-light text-dark">Lenovo</span>
+                                        <span class="badge bg-light text-dark">Acer</span>
+                                        <span class="badge bg-light text-dark">Asus</span>
+                                    </div>
+                                    <button class="btn btn-outline-primary mt-3" onclick="redirectToContact('Orçamento', 'Notebooks')">
+                                        <i class="fas fa-envelope me-2"></i> Solicitar Orçamento
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Seção de Computadores -->
+                <section id="computadores" class="mb-5">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body">
+                            <div class="row align-items-center">
+                                <div class="col-md-3 text-center">
+                                    <img src="/assets/img/computador.webp" alt="Computadores" class="category-img">
+                                </div>
+                                <div class="col-md-9">
+                                    <h2 class="h4 fw-bold">Computadores</h2>
+                                    <p class="text-muted">Soluções completas em desktops para uso corporativo, doméstico ou gamers. Montamos computadores personalizados de acordo com sua necessidade, desde máquinas básicas para escritório até workstations profissionais para engenharia, arquitetura e design.</p>
+                                    <div class="d-flex flex-wrap gap-2">
+                                        <span class="badge bg-light text-dark">Computadores Corporativos</span>
+                                        <span class="badge bg-light text-dark">Workstations</span>
+                                        <span class="badge bg-light text-dark">All-in-One</span>
+                                        <span class="badge bg-light text-dark">Gamers</span>
+                                    </div>
+                                    <button class="btn btn-outline-primary mt-3" onclick="redirectToContact('Orçamento', 'Computadores')">
+                                        <i class="fas fa-envelope me-2"></i> Solicitar Orçamento
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Seção de Impressoras -->
+                <section id="impressoras" class="mb-5">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body">
+                            <div class="row align-items-center">
+                                <div class="col-md-3 text-center">
+                                    <img src="/assets/img/impressora.webp" alt="Impressoras" class="category-img">
+                                </div>
+                                <div class="col-md-9">
+                                    <h2 class="h4 fw-bold">Impressoras</h2>
+                                    <p class="text-muted">Linha completa de impressoras para todos os tipos de necessidade, desde impressoras pessoais até equipamentos corporativos de alta capacidade. Oferecemos soluções em jato de tinta, laser, multifuncionais e sistemas de impressão profissional.</p>
+                                    <div class="d-flex flex-wrap gap-2">
+                                        <span class="badge bg-light text-dark">Multifuncionais</span>
+                                        <span class="badge bg-light text-dark">Laser</span>
+                                        <span class="badge bg-light text-dark">Jato de Tinta</span>
+                                        <span class="badge bg-light text-dark">Matricial</span>
+                                        <span class="badge bg-light text-dark">Plotter</span>
+                                    </div>
+                                    <button class="btn btn-outline-primary mt-3" onclick="redirectToContact('Orçamento', 'Impressoras')">
+                                        <i class="fas fa-envelope me-2"></i> Solicitar Orçamento
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
+                <!-- Seção de Periféricos -->
+                <section id="perifericos">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body">
+                            <div class="row align-items-center">
+                                <div class="col-md-3 text-center">
+                                    <img src="https://img.icons8.com/fluency/96/keyboard.png" alt="Periféricos" class="category-img">
+                                </div>
+                                <div class="col-md-9">
+                                    <h2 class="h4 fw-bold">Periféricos e Acessórios</h2>
+                                    <p class="text-muted">Completa linha de periféricos para montar seu setup ideal. Oferecemos teclados, mouses, headsets, webcams, nobreaks, estabilizadores e todos os acessórios necessários para seu computador ou notebook.</p>
+                                    <div class="d-flex flex-wrap gap-2">
+                                        <span class="badge bg-light text-dark">Teclados e Mouses</span>
+                                        <span class="badge bg-light text-dark">Headsets</span>
+                                        <span class="badge bg-light text-dark">Webcams</span>
+                                        <span class="badge bg-light text-dark">Nobreaks</span>
+                                        <span class="badge bg-light text-dark">Acessórios</span>
+                                    </div>
+                                    <button class="btn btn-outline-primary mt-3" onclick="redirectToContact('Orçamento', 'Periféricos')">
+                                        <i class="fas fa-envelope me-2"></i> Solicitar Orçamento
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <!-- Footer Moderno -->
+    <footer class="bg-dark text-white pt-5">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Logo e Sobre -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="mb-4">
+                        <a class="navbar-brand" href="index.html">
+                            <img src="./assets/img/logo.png" alt="IdealTech" height="40">
+                        </a>
+                    </div>
+                    <p class="text-muted mb-4">Soluções completas em tecnologia para sua empresa.</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/profile.php?id=61563216931237" class="text-muted me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/idealtechassistencia/?hl=pt-br" class="text-muted me-3"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/company/idealtech-solu%C3%A7%C3%B5es-em-inform%C3%A1tica" class="text-muted me-3"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <!-- Links Rápidos -->
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="text-uppercase mb-4 fw-bold">Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <a href="index.html" class="text-white text-decoration-none d-flex align-items-center">
+                                <i class="fas fa-chevron-right me-2 text-primary small"></i> Início
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="empresa.html" class="text-white text-decoration-none d-flex align-items-center">
+                                <i class="fas fa-chevron-right me-2 text-primary small"></i> Empresa
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="produtos.html" class="text-white text-decoration-none d-flex align-items-center">
+                                <i class="fas fa-chevron-right me-2 text-primary small"></i> Produtos
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="servicos.html" class="text-white text-decoration-none d-flex align-items-center">
+                                <i class="fas fa-chevron-right me-2 text-primary small"></i> Serviços
+                            </a>
+                        </li>
+                        <li>
+                            <a href="contato.html" class="text-white text-decoration-none d-flex align-items-center">
+                                <i class="fas fa-chevron-right me-2 text-primary small"></i> Contato
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Contatos -->
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-uppercase mb-4 fw-bold">Contato</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-3 d-flex">
+                            <div class="me-3 text-primary">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <span class="text-muted">Rua General Gomes Carineiro, 436, Sala 02<br>Bento Gonçalves/RS<br>CEP: 95707-000</span>
+                            </div>
+                        </li>
+                        <li class="mb-3 d-flex">
+                            <div class="me-3 text-primary">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <span class="text-muted">(54) 3451-3100<br>(54) 99187-7218</span>
+                            </div>
+                        </li>
+                        <li class="d-flex">
+                            <div class="me-3 text-primary">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <span class="text-muted">idealtech@idealtechcomputadores.com.br</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="border-top border-secondary mt-5 pt-4">
+                <div class="row align-items-center">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        <p class="small text-muted mb-0">&copy; 2025 IdealTech Computadores. Todos os direitos reservados.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Função para redirecionar para a página de contato com dados pré-preenchidos
+        function redirectToContact(subject, productCategory = '') {
+            // Construir a URL com parâmetros
+            let url = 'contato.html';
+            
+            // Adicionar parâmetros se fornecidos
+            if (subject || productCategory) {
+                url += '?';
+                
+                if (subject) {
+                    url += `subject=${encodeURIComponent(subject)}`;
+                }
+                
+                if (productCategory) {
+                    url += `${subject ? '&' : ''}product=${encodeURIComponent(productCategory)}`;
+                }
+            }
+            
+            // Redirecionar
+            window.location.href = url;
+        }
+
+        // Verificar parâmetros da URL para rolar até a seção correta
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const categoria = urlParams.get('categoria');
+            
+            if (categoria) {
+                // Mapear categorias antigas para as novas âncoras
+                const map = {
+                    'notebooks': 'notebooks',
+                    'workstations': 'computadores',
+                    'servidores': 'servidores',
+                    'monitores': 'monitores',
+                    'perifericos': 'perifericos'
+                };
+                
+                const anchor = map[categoria] || categoria;
+                const element = document.getElementById(anchor);
+                
+                if (element) {
+                    setTimeout(() => {
+                        element.scrollIntoView({ behavior: 'smooth' });
+                    }, 100);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
